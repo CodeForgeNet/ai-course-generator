@@ -42,7 +42,7 @@ const ContactUs = () => {
         <link
           rel="canonical"
           //   My vercel-website link
-          href="https://www.yourwebsite.com/contact-us"
+          href="https://ai-course-generator-alpha.vercel.app/contact"
         />
       </Head>
       <div
