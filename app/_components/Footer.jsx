@@ -8,8 +8,7 @@ const Footer = () => {
   const path = usePathname();
   const menu = [
     { id: 1, name: "About Us", path: "/about" },
-    { id: 2, name: "Contact Us", path: "/contact" },
-    { id: 3, name: "Terms & Conditions", path: "/terms" },
+    { id: 2, name: "Terms & Conditions", path: "/terms" },
   ];
   return (
     <footer className=" bottom-0 bg-white dark:bg-gray-900">
