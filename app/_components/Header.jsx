@@ -17,7 +17,8 @@ function Header() {
       </Head>
       <div className="flex justify-between p-5 shadow-sm">
         <Link href={"/"} className="flex justify-center items-center gap-2">
-          <Image src={"/eduGenLogo.svg"} alt="logo" width={150} height={100} />
+          {/* <Image src={"/eduGenLogo.svg"} alt="logo" width={150} height={100} /> */}
+          <img src="/eduGenLogo.svg" alt="logo" width="150" height="100" />
         </Link>
 
         <div className="flex justify-center items-center gap-10 cursor-pointer">
