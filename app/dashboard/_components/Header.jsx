@@ -1,0 +1,14 @@
+import { UserButton } from "@clerk/nextjs";
+import Image from "next/image";
+import React from "react";
+
+function Header() {
+  return (
+    <div className="flex justify-between items-center p-6 shadow-sm">
+      <Image src={"/eduGenlogo.svg"} width={30} height={30} alt="EduGen logo" />
+      <UserButton />
+    </div>
+  );
+}
+
+export default Header;
