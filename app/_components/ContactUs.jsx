@@ -17,17 +17,30 @@ const ContactUs = () => {
     handleSubmit,
     formState: { errors },
   } = useForm();
-  const onSubmit = (e) => {
-    // e.preventDefault();
+  // const onSubmit = (e) => {
+  //   // e.preventDefault();
 
-    setSuccess(true);
-    setName("");
-    setEmail("");
-    setMessage("");
-    // toast.success(`Thank you for your message! ${name}  👏 I will get back to you soon`);
+  //   setSuccess(true);
+  //   setName("");
+  //   setEmail("");
+  //   setMessage("");
+  //   // toast.success(`Thank you for your message! ${name}  👏 I will get back to you soon`);
 
-    // console.error('Error adding document: ', error);
-    toast.error(`Something went wrong, Please try Again ${name} `);
+  //   // console.error('Error adding document: ', error);
+  //   toast.error(`Something went wrong, Please try Again ${name} `);
+  const onSubmit = async (data) => {
+    try {
+      setSuccess(true);
+      setName("");
+      setEmail("");
+      setMessage("");
+      toast.success(
+        `Thank you for your message! ${data.name} 👏 I will get back to you soon`
+      );
+    } catch (error) {
+      console.error("Error submitting contact form:", error);
+      toast.error(`Something went wrong, Please try Again ${data.name}`);
+    }
   };
   return (
     <>
