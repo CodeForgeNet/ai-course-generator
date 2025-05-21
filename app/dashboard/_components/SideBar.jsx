@@ -29,12 +29,6 @@ function SideBar() {
       icon: <HiMiniSquare3Stack3D />,
       path: "/dashboard/explore",
     },
-    {
-      id: 3,
-      name: "Upgrade",
-      icon: <HiMiniShieldCheck />,
-      path: "/dashboard/upgrade",
-    },
   ];
 
   const path = usePathname();
