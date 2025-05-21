@@ -54,7 +54,7 @@ An AI-powered platform for creating and managing online courses. Built using **N
 | **Clerk**        | Manages authentication and user profiles securely.                |
 | **Gemini API**   | Generates AI-powered course content.                              |
 | **Cloudinary**   | Provides file storage.                                            |
-| **Drizzle ORM**  | Provides file database management.                                |
+| **Drizzle ORM**  | Provides database management.                                     |
 | **Tailwind CSS** | A utility-first CSS framework for styling.                        |
 | **React Icons**  | A library of icons for React applications.                        |
 | **Vercel**       | A platform for hosting and deploying web applications.            |
