@@ -17,7 +17,7 @@ function Header() {
       </Head>
       <header className="sticky top-0 z-50 backdrop-blur-md bg-white/60 shadow-lg">
         <div className="flex justify-between items-center px-8 py-4">
-          <Link href={"/"} className="flex items-center gap-2 group">
+          <Link href={"/dashboard"} className="flex items-center gap-2 group">
             <Image
               src={"/eduGen.svg"}
               alt="logo"
