@@ -160,16 +160,14 @@ function CourseCard({ course, refreshData, displayUser = false }) {
         </CardItem>
 
         <CardItem translateZ={30} className="mt-3">
-          <Link href={"/course/" + course?.courseId}>
-            <h2 className="font-medium text-lg flex justify-between items-center">
-              {course?.courseOutput?.courseName}
-              {!displayUser && (
-                <DropdownOption handleOnDelete={() => handleOnDelete()}>
-                  <HiMiniEllipsisVertical />
-                </DropdownOption>
-              )}
-            </h2>
-          </Link>
+          <h2 className="font-medium text-lg flex justify-between items-center">
+            {course?.courseOutput?.courseName}
+            {!displayUser && (
+              <DropdownOption handleOnDelete={() => handleOnDelete()}>
+                <HiMiniEllipsisVertical />
+              </DropdownOption>
+            )}
+          </h2>
         </CardItem>
         <CardItem translateZ={20} className="text-sm text-gray-400 my-1">
           {course?.category}

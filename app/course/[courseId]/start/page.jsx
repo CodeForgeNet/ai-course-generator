@@ -53,7 +53,7 @@ function CourseStart({ params }) {
       </div>
 
       {/* Chapter List Sidebar */}
-      <div className="fixed top-16 left-0 md:w-72 hidden md:block h-[calc(100vh-4rem)] border-r shadow-sm overflow-y-auto bg-white dark:bg-gray-900 z-40">
+      <div className="fixed top-30 left-0 md:w-72 hidden md:block h-[calc(100vh-4rem)] border-r shadow-sm overflow-y-auto bg-white dark:bg-gray-900 z-40">
         <div className="sticky top-0 z-20 bg-white dark:bg-gray-900 border-b border-purple-200 dark:border-gray-800 shadow-lg rounded-b-2xl">
           <h2 className="text-2xl font-extrabold bg-gradient-to-r from-purple-600 via-pink-500 to-yellow-400 bg-clip-text text-transparent px-6 py-5 text-center">
             {course?.courseOutput?.courseName}

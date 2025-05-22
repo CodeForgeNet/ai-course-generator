@@ -31,7 +31,9 @@ function UserCourseList() {
   };
   return (
     <div className="mt-15">
-      <h2 className="font-medium text-2xl">My AI Courses</h2>
+      <h2 className="text-3xl font-extrabold bg-gradient-to-r from-purple-600 via-pink-500 to-yellow-400 bg-clip-text text-transparent mb-6 drop-shadow text-center">
+        My AI Courses
+      </h2>
       <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-5">
         {/* {CourseList?.map((course, index) => (
           <CourseCard course={course} key={index} /> */}
