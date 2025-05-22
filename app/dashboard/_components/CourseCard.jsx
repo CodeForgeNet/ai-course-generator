@@ -67,14 +67,16 @@ export function CardContainer({ children, className, containerClassName }) {
     </MouseEnterContext.Provider>
   );
 }
-// Card Body and Item
+
 export function CardBody({ children, className }) {
   const [isMouseEntered] = useMouseEnter();
   return (
     <div
       className={`mt-8 mb-10 w-[340px] h-[430px] flex flex-col justify-between rounded-xl border border-black/10 dark:border-white/20 shadow-md p-4 [transform-style:preserve-3d] ${
         isMouseEntered
-          ? "bg-gradient-to-br from-purple-200 via-pink-100 to-yellow-100 dark:from-purple-900 dark:via-gray-900 dark:to-black"
+          ? // ? "bg-purple-100 dark:bg-gray-900"
+            // : "bg-white dark:bg-black"
+            "bg-gradient-to-br from-purple-200 via-pink-100 to-yellow-100 dark:from-purple-900 dark:via-gray-900 dark:to-black"
           : "bg-gradient-to-br from-white via-purple-50 to-yellow-50 dark:from-black dark:via-gray-900 dark:to-purple-950"
       } ${className || ""}`}
     >
@@ -146,48 +148,47 @@ function CourseCard({ course, refreshData, displayUser = false }) {
               alt={course?.courseOutput?.courseName || "Course Banner"}
             />
           </CardItem>
-          {/* </Link> */}
-          <CardItem translateZ={30} className="mt-3">
-            <h2 className="font-medium text-lg flex justify-between items-center">
-              {course?.courseOutput?.courseName}
-              {!displayUser && (
-                <DropdownOption handleOnDelete={handleOnDelete}>
-                  <HiMiniEllipsisVertical />
-                </DropdownOption>
-              )}
-            </h2>
-          </CardItem>
-          <CardItem translateZ={20} className="text-sm text-gray-400 my-1">
-            {course?.category}
-          </CardItem>
-          <div className="flex items-center justify-between mt-2">
-            <CardItem
-              translateZ={15}
-              className="flex gap-2 items-center p-1 bg-purple-50 text-[rgb(135,59,149)] text-sm rounded-sm"
-            >
-              <HiBookOpen />
-              {course?.courseOutput?.noOfChapters} Chapters
-            </CardItem>
-            <CardItem
-              translateZ={15}
-              className="text-sm bg-purple-50 text-[rgb(135,59,149)] p-1 rounded-sm"
-            >
-              {course?.level}
-            </CardItem>
-          </div>
-          {displayUser && (
-            <CardItem translateZ={25} className="flex gap-2 items-center mt-2">
-              <Image
-                src={course?.userProfileImage}
-                width={35}
-                height={35}
-                className="rounded-full"
-                alt={course?.userName || "User profile image"}
-              />
-              <h2 className="text-sm">{course?.userName}</h2>
-            </CardItem>
-          )}
         </Link>
+        <CardItem translateZ={30} className="mt-3">
+          <h2 className="font-medium text-lg flex justify-between items-center">
+            {course?.courseOutput?.courseName}
+            {!displayUser && (
+              <DropdownOption handleOnDelete={handleOnDelete}>
+                <HiMiniEllipsisVertical />
+              </DropdownOption>
+            )}
+          </h2>
+        </CardItem>
+        <CardItem translateZ={20} className="text-sm text-gray-400 my-1">
+          {course?.category}
+        </CardItem>
+        <div className="flex items-center justify-between mt-2">
+          <CardItem
+            translateZ={15}
+            className="flex gap-2 items-center p-1 bg-purple-50 text-[rgb(135,59,149)] text-sm rounded-sm"
+          >
+            <HiBookOpen />
+            {course?.courseOutput?.noOfChapters} Chapters
+          </CardItem>
+          <CardItem
+            translateZ={15}
+            className="text-sm bg-purple-50 text-[rgb(135,59,149)] p-1 rounded-sm"
+          >
+            {course?.level}
+          </CardItem>
+        </div>
+        {displayUser && (
+          <CardItem translateZ={25} className="flex gap-2 items-center mt-2">
+            <Image
+              src={course?.userProfileImage}
+              width={35}
+              height={35}
+              className="rounded-full"
+              alt={course?.userName || "User profile image"}
+            />
+            <h2 className="text-sm">{course?.userName}</h2>
+          </CardItem>
+        )}
       </CardBody>
     </CardContainer>
   );
