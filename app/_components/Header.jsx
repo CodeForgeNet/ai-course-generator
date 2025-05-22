@@ -15,17 +15,20 @@ function Header() {
         <meta name="description" content="EduGen: AI-Powered Learning" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <header className="sticky top-0 z-50 backdrop-blur-md bg-white/60 shadow-lg">
+      <header className="sticky top-0 z-50 backdrop-blur-xl bg-gradient-to-br from-purple-50 via-yellow-50 to-pink-50 dark:from-gray-900 dark:via-gray-950 dark:to-purple-950 shadow-2xl border-b border-purple-100 dark:border-gray-800">
         <div className="flex justify-between items-center px-8 py-4">
           <Link href={"/dashboard"} className="flex items-center gap-2 group">
             <Image
-              src={"/eduGen.svg"}
+              src={"/eduGenLogo.svg"}
               alt="logo"
-              width={150}
-              height={100}
-              className="transition-transform duration-300 group-hover:scale-105 group-hover:rotate-2"
+              width={40}
+              height={40}
+              className="transition-transform duration-300 group-hover:scale-105 group-hover:rotate-2 drop-shadow-lg"
               priority
             />
+            <span className="hidden md:inline-block text-2xl font-extrabold bg-gradient-to-r from-purple-600 via-pink-500 to-yellow-400 bg-clip-text text-transparent tracking-tight drop-shadow-md ml-2">
+              EduGen
+            </span>
           </Link>
 
           <div className="flex items-center gap-8">
@@ -46,6 +49,8 @@ function Header() {
             </Link>
           </div>
         </div>
+        {/* Decorative gradient bar */}
+        <div className="h-1 w-full bg-gradient-to-r from-purple-400 via-pink-400 to-yellow-300 opacity-70" />
       </header>
     </>
   );

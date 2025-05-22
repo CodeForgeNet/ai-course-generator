@@ -17,7 +17,7 @@ import { CourseList } from "@/configs/Schema";
 import { eq } from "drizzle-orm";
 import { db } from "@/configs/db";
 
-function EditCourseBasicInfo({ course, refreshData }) {
+function EditCourseBasicInfo({ course, refreshData, edit = true }) {
   const [courseName, setCourseName] = useState();
   const [description, setDescription] = useState();
 
@@ -46,7 +46,7 @@ function EditCourseBasicInfo({ course, refreshData }) {
   return (
     <Dialog>
       <DialogTrigger>
-        <HiOutlinePencilAlt className="cursor-pointer" />
+        <HiOutlinePencilAlt className="cursor-pointer text-black" />
       </DialogTrigger>
       <DialogContent>
         <DialogHeader>

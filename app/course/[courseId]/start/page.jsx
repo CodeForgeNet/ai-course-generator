@@ -48,17 +48,19 @@ function CourseStart({ params }) {
   return (
     <div>
       {/* Header */}
-      {/* <Header /> */}
       <div className="fixed top-0 left-0 w-full z-50 bg-white shadow-md">
         <Header />
       </div>
 
       {/* Chapter List Sidebar */}
-      <div className="fixed md:w-72 hidden md:block h-screen border-r shadow-sm overflow-y-auto mt-16">
-        <h2 className="font-medium text-lg bg-[rgb(135,59,149)] p-4 text-white">
-          {course?.courseOutput?.courseName}
-        </h2>
-        <div>
+      <div className="fixed top-16 left-0 md:w-72 hidden md:block h-[calc(100vh-4rem)] border-r shadow-sm overflow-y-auto bg-white dark:bg-gray-900 z-40">
+        <div className="sticky top-0 z-20 bg-white dark:bg-gray-900 border-b border-purple-200 dark:border-gray-800 shadow-lg rounded-b-2xl">
+          <h2 className="text-2xl font-extrabold bg-gradient-to-r from-purple-600 via-pink-500 to-yellow-400 bg-clip-text text-transparent px-6 py-5 text-center">
+            {course?.courseOutput?.courseName}
+          </h2>
+        </div>
+        <div className="pb-6">
+          {" "}
           {course?.courseOutput?.chapters.map((chapter, index) => (
             <div
               key={index}
@@ -70,7 +72,11 @@ function CourseStart({ params }) {
                 GetSelectedChapterContent(index);
               }}
             >
-              <ChapterListCard chapter={chapter} index={index} />
+              <ChapterListCard
+                chapter={chapter}
+                index={index}
+                selected={selectedChapter?.name === chapter?.name}
+              />
             </div>
           ))}
         </div>

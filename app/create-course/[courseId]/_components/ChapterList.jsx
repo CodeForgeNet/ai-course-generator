@@ -4,21 +4,22 @@ import EditChapters from "./EditChapters";
 
 function ChapterList({ course, refreshData, edit = true }) {
   return (
-    <div className="mt-3">
-      <h2 className="font-semibold text-xl">Chapters</h2>
-      <div className="mt-2">
+    <div className="mt-6">
+      <h2 className="font-extrabold text-2xl bg-gradient-to-r from-purple-600 via-pink-500 to-yellow-400 bg-clip-text text-transparent mb-4 drop-shadow">
+        Chapters
+      </h2>
+      <div className="space-y-5">
         {course?.courseOutput?.chapters.map((chapter, index) => (
-          // <div className="border p-5 rounded-lg mb-4 flex items-center justify-between">
           <div
             key={chapter?.name || index}
-            className="border p-5 rounded-lg mb-4 flex items-center justify-between"
+            className="flex items-center justify-between p-6 rounded-2xl shadow-lg bg-white/80 dark:bg-gray-900/80 border border-purple-100 dark:border-gray-800 transition-all duration-200 hover:scale-[1.015] hover:shadow-xl"
           >
             <div className="flex gap-5 items-center">
-              <h2 className="bg-[rgb(135,59,149)] flex-none h-10 w-10 text-white rounded-full text-center p-2">
+              <div className="flex-none h-12 w-12 rounded-full bg-gradient-to-br from-purple-500 via-pink-400 to-yellow-400 flex items-center justify-center text-white text-xl font-bold shadow">
                 {index + 1}
-              </h2>
+              </div>
               <div>
-                <h2 className="font-semibold text-lg">
+                <h2 className="font-semibold text-lg flex items-center gap-2">
                   {chapter?.name}
                   {edit && (
                     <EditChapters
@@ -28,14 +29,16 @@ function ChapterList({ course, refreshData, edit = true }) {
                     />
                   )}
                 </h2>
-                <p className=" text-sm text-gray-600 ">{chapter?.about}</p>
-                <p className="flex gap-2 text-[rgb(135,59,149)] items-center">
+                <p className="text-sm text-gray-600 dark:text-gray-300 mt-1">
+                  {chapter?.about}
+                </p>
+                <p className="flex gap-2 text-purple-700 dark:text-yellow-200 items-center mt-1 text-sm font-medium">
                   <HiOutlineClock />
                   {chapter?.duration}
                 </p>
               </div>
             </div>
-            <HiOutlineCheckCircle className="text-4xl text-gray-300 flex-none" />
+            <HiOutlineCheckCircle className="text-3xl text-green-400 dark:text-yellow-300 flex-none" />
           </div>
         ))}
       </div>

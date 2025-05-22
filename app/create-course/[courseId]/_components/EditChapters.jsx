@@ -51,23 +51,30 @@ function EditChapters({ course, index, refreshData }) {
         <DialogHeader>
           <DialogTitle>Edit Chapter</DialogTitle>
           <DialogDescription>
-            <div className="mt-3">
-              <label>Chapter Title</label>
-              <Input
-                defaultValue={Chapters[index].name}
-                onChange={(event) => setName(event?.target.value)}
-              />
-            </div>
-            <div>
-              <label>Description</label>
-              <Textarea
-                className="h-40"
-                defaultValue={Chapters[index].about}
-                onChange={(event) => setAbout(event?.target.value)}
-              />
-            </div>
+            Edit the chapter title and description below.
           </DialogDescription>
         </DialogHeader>
+        <div className="mt-3 space-y-4">
+          <div>
+            <label className="block mb-1 font-semibold text-purple-700 dark:text-yellow-200">
+              Chapter Title
+            </label>
+            <Input
+              defaultValue={Chapters[index].name}
+              onChange={(event) => setName(event?.target.value)}
+            />
+          </div>
+          <div>
+            <label className="block mb-1 font-semibold text-purple-700 dark:text-yellow-200">
+              Description
+            </label>
+            <Textarea
+              className="h-40"
+              defaultValue={Chapters[index].about}
+              onChange={(event) => setAbout(event?.target.value)}
+            />
+          </div>
+        </div>
         <DialogFooter>
           <DialogClose>
             <Button onClick={onUpdateHandler}>Update</Button>

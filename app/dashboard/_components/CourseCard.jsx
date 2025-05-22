@@ -147,8 +147,8 @@ function CourseCard({ course, refreshData, displayUser = false }) {
   return (
     <CardContainer>
       <CardBody>
-        <Link href={"/course/" + course?.courseId}>
-          <CardItem translateZ={40} className="block">
+        <CardItem translateZ={40} className="block">
+          <Link href={"/course/" + course?.courseId}>
             <Image
               src={course?.courseBanner}
               width={300}
@@ -156,18 +156,20 @@ function CourseCard({ course, refreshData, displayUser = false }) {
               className="w-full h-[180px] object-cover rounded-lg"
               alt={course?.courseOutput?.courseName || "Course Banner"}
             />
-          </CardItem>
-        </Link>
+          </Link>
+        </CardItem>
 
         <CardItem translateZ={30} className="mt-3">
-          <h2 className="font-medium text-lg flex justify-between items-center">
-            {course?.courseOutput?.courseName}
-            {!displayUser && (
-              <DropdownOption handleOnDelete={() => handleOnDelete()}>
-                <HiMiniEllipsisVertical />
-              </DropdownOption>
-            )}
-          </h2>
+          <Link href={"/course/" + course?.courseId}>
+            <h2 className="font-medium text-lg flex justify-between items-center">
+              {course?.courseOutput?.courseName}
+              {!displayUser && (
+                <DropdownOption handleOnDelete={() => handleOnDelete()}>
+                  <HiMiniEllipsisVertical />
+                </DropdownOption>
+              )}
+            </h2>
+          </Link>
         </CardItem>
         <CardItem translateZ={20} className="text-sm text-gray-400 my-1">
           {course?.category}
