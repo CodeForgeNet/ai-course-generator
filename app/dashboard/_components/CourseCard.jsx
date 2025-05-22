@@ -10,6 +10,9 @@ import React, {
 import { HiBookOpen, HiMiniEllipsisVertical } from "react-icons/hi2";
 import DropdownOption from "./DropdownOption";
 import Link from "next/link";
+import { db } from "@/configs/db";
+import { CourseList } from "@/configs/Schema";
+import { eq } from "drizzle-orm";
 
 // 3D Card Context and Hooks
 const MouseEnterContext = createContext(undefined);
@@ -131,8 +134,14 @@ export function CardItem({
 // The actual CourseCard
 function CourseCard({ course, refreshData, displayUser = false }) {
   const handleOnDelete = async () => {
-    // ...your delete logic...
-    if (refreshData) refreshData();
+    const resp = await db
+      .delete(CourseList)
+      .where(eq(CourseList.id, course?.id))
+      .returning({ id: CourseList?.id });
+
+    if (resp) {
+      refreshData();
+    }
   };
 
   return (
@@ -149,11 +158,12 @@ function CourseCard({ course, refreshData, displayUser = false }) {
             />
           </CardItem>
         </Link>
+
         <CardItem translateZ={30} className="mt-3">
           <h2 className="font-medium text-lg flex justify-between items-center">
             {course?.courseOutput?.courseName}
             {!displayUser && (
-              <DropdownOption handleOnDelete={handleOnDelete}>
+              <DropdownOption handleOnDelete={() => handleOnDelete()}>
                 <HiMiniEllipsisVertical />
               </DropdownOption>
             )}
