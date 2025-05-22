@@ -7,7 +7,7 @@ import { and, eq } from "drizzle-orm";
 import React, { use, useEffect, useState } from "react";
 import ChapterListCard from "./_components/ChapterListCard";
 import ChapterContent from "./_components/ChapterContent";
-import Header from "@/app/_components/Header";
+import Header from "@/app/dashboard/_components/Header";
 
 function CourseStart({ params }) {
   const { courseId } = use(params);

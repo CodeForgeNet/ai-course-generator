@@ -2,8 +2,8 @@
 
 import React, { useState } from "react";
 import SideBar from "./_components/SideBar";
-import Header from "./_components/Header";
 import { UserCourseListContext } from "../_context/UserCourseListContext";
+import Header from "./_components/Header";
 
 function DashboardLayout({ children }) {
   const [userCourseList, setUserCourseList] = useState([]);
