@@ -17,7 +17,7 @@ function DashboardLayout({ children }) {
           <SideBar />
         </div>
         <div className="md:ml-64 ">
-          <Header />
+          <Header onMenuClick={() => setSidebarOpen(true)} />
           <div>{children}</div>
         </div>
       </div>

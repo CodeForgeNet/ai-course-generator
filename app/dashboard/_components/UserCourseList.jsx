@@ -29,14 +29,13 @@ function UserCourseList() {
     setCourseList(result);
     setUserCourseList(result);
   };
+
   return (
-    <div className="mt-15">
-      <h2 className="text-3xl font-extrabold bg-gradient-to-r from-purple-600 via-pink-500 to-yellow-400 bg-clip-text text-transparent mb-6 drop-shadow text-center">
+    <div className="mt-10 px-2 sm:px-4">
+      <h2 className="text-2xl sm:text-3xl font-extrabold bg-gradient-to-r from-purple-600 via-pink-500 to-yellow-400 bg-clip-text text-transparent mb-6 drop-shadow text-center">
         My AI Courses
       </h2>
-      <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-5">
-        {/* {CourseList?.map((course, index) => (
-          <CourseCard course={course} key={index} /> */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
         {courseList?.length > 0
           ? courseList?.map((course) => (
               <CourseCard
@@ -54,6 +53,7 @@ function UserCourseList() {
       </div>
     </div>
   );
+  // ...existing code...
 }
 
 export default UserCourseList;
