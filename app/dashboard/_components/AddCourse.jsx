@@ -20,7 +20,7 @@ function AddCourse() {
           Create a new course with AI, share with friends, and earn from it.
           Unlock your teaching potential!
         </p>
-        {userCourseList >= 5 && (
+        {userCourseList >= 10 && (
           <div className="mt-2 text-sm text-red-500 font-semibold">
             You have reached your free course limit.{" "}
             <Link
@@ -34,7 +34,7 @@ function AddCourse() {
         )}
       </div>
       <Link
-        href={userCourseList >= 5 ? "/dashboard/upgrade" : "/create-course"}
+        href={userCourseList >= 10 ? "/dashboard/upgrade" : "/create-course"}
         className="w-full md:w-auto"
       >
         <Button

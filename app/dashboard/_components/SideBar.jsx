@@ -85,11 +85,12 @@ function SideBar() {
           {userCourseList?.length} out of 10 Courses created
         </h2>
         <h2 className="text-xs text-gray-500 dark:text-gray-400">
-          Upgrade your plan for unlimited course generation
+          You can create 10 courses only. <br />
+          <b>Upgrade Plan will come soon</b>
         </h2>
-        <button className="mt-4 w-full py-2 rounded-lg bg-gradient-to-r from-purple-500 via-pink-400 to-yellow-400 text-white font-semibold shadow hover:from-purple-600 hover:to-yellow-500 transition-all duration-200 text-sm">
+        {/* <button className="mt-4 w-full py-2 rounded-lg bg-gradient-to-r from-purple-500 via-pink-400 to-yellow-400 text-white font-semibold shadow hover:from-purple-600 hover:to-yellow-500 transition-all duration-200 text-sm">
           Upgrade Plan
-        </button>
+        </button> */}
       </div>
     </aside>
   );
