@@ -18,12 +18,13 @@ function FinishScreen({ params: paramsPromise }) {
   const router = useRouter();
 
   const [host, setHost] = useState("");
+
   useEffect(() => {
-    setHost(
-      process.env.NEXT_PUBLIC_HOST_NAME ||
-        (typeof window !== "undefined" ? window.location.origin : "")
-    );
+    if (typeof window !== "undefined") {
+      setHost(window.location.origin);
+    }
     params && GetCourse();
+    // eslint-disable-next-line
   }, [params, user]);
 
   useEffect(() => {
