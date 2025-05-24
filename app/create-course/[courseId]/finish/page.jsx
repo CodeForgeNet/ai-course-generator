@@ -17,6 +17,15 @@ function FinishScreen({ params: paramsPromise }) {
   const [course, setCourse] = useState([]);
   const router = useRouter();
 
+  const [host, setHost] = useState("");
+  useEffect(() => {
+    setHost(
+      process.env.NEXT_PUBLIC_HOST_NAME ||
+        (typeof window !== "undefined" ? window.location.origin : "")
+    );
+    params && GetCourse();
+  }, [params, user]);
+
   useEffect(() => {
     params && GetCourse();
   }, [params, user]);
@@ -46,7 +55,7 @@ function FinishScreen({ params: paramsPromise }) {
         edit={false}
       />
 
-      <h3 className="mt-4">Course URL: </h3>
+      {/* <h3 className="mt-4">Course URL: </h3>
       <h2 className="text-center text-gray-400 border p-2 rounded-md flex gap-5 items-center">
         {process.env.NEXT_PUBLIC_HOST_NAME}/course/view/{course?.courseId}
         <HiClipboardDocumentCheck
@@ -56,6 +65,18 @@ function FinishScreen({ params: paramsPromise }) {
               process.env.NEXT_PUBLIC_HOST_NAME +
                 "/course/view/" +
                 course?.courseId
+            )
+          }
+        />
+      </h2> */}
+      <h3 className="mt-4">Course URL: </h3>
+      <h2 className="text-center text-gray-400 border p-2 rounded-md flex gap-5 items-center">
+        {host}/course/{course?.courseId}
+        <HiClipboardDocumentCheck
+          className="h-5 w-5 cursor-pointer"
+          onClick={async () =>
+            await navigator.clipboard.writeText(
+              `${host}/course/${course?.courseId}`
             )
           }
         />
